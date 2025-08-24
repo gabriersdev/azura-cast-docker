@@ -5,7 +5,7 @@
       "name": "azuracast",
       "image": "azuracast/azuracast:stable",
       "variables": {
-        "DATABASE_URL": "mysql://${{MySQL.MYSQLUSER}}:${{MySQL.MYSQLPASSWORD}}@${{MySQL.MYSQLHOST}}:${{MySQL.MYSQLPORT}}/${{MySQL.MYSQLDATABASE}}",
+        "DATABASE_URL": "mysql://${{vars.DB_USER}}:${{vars.DB_PASSWORD}}@${{vars.DB_HOST}}:${{vars.DB_PORT}}/${{vars.DB_NAME}}",
         "REDIS_URL": "${{Redis.REDIS_URL}}",
         "AZURACAST_DB_EXTERNAL": "true",
         "AZURACAST_ALWAYS_USE_SSL": "true"
