@@ -1,0 +1,35 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "services": [
+    {
+      "name": "azuracast",
+      "image": "azuracast/azuracast:stable",
+      "variables": {
+        "DATABASE_URL": "mysql://${{MySQL.MYSQLUSER}}:${{MySQL.MYSQLPASSWORD}}@${{MySQL.MYSQLHOST}}:${{MySQL.MYSQLPORT}}/${{MySQL.MYSQLDATABASE}}",
+        "REDIS_URL": "${{Redis.REDIS_URL}}",
+        "AZURACAST_DB_EXTERNAL": "true",
+        "AZURACAST_ALWAYS_USE_SSL": "true"
+      },
+      "volumes": [
+        {
+          "mountPath": "/var/azuracast",
+          "size": 20
+        }
+      ],
+      "ports": [
+        {
+          "port": 80,
+          "protocol": "TCP"
+        }
+      ]
+    },
+    {
+      "name": "MySQL",
+      "plugin": "mysql"
+    },
+    {
+      "name": "Redis",
+      "plugin": "redis"
+    }
+  ]
+}
