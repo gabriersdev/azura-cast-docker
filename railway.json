@@ -14,7 +14,7 @@
       },
       "volumes": [
         {
-          "mountPath": "/var/azuracast",
+          "mountPath": "/var/azuracast"
         }
       ],
       "ports": [
