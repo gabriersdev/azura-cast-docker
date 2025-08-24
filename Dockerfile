@@ -1,1 +1,1 @@
-FROM azuracast/web:stable
+FROM azuracast/azuracast:stable
